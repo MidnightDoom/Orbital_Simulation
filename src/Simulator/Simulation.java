@@ -1,3 +1,8 @@
+package Simulator;
+
+import Bodies.Body;
+import Bodies.Ship;
+
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;

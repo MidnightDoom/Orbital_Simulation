@@ -1,3 +1,5 @@
+package Math;
+
 public record Vector(double x, double y) {
 
     // VECTOR OPERATIONS

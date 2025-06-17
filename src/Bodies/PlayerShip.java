@@ -1,3 +1,6 @@
+package Bodies;
+
+import Math.*;
 import java.awt.*;
 
 public class PlayerShip extends Ship {

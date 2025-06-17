@@ -1,3 +1,9 @@
+import Bodies.Body;
+import Bodies.Planet;
+import Simulator.Simulation;
+import Simulator.Window;
+
+import Math.*;
 import javax.swing.*;
 import java.util.ArrayList;
 
@@ -43,7 +49,7 @@ public class Main extends JFrame {
                 "Luna",
                 7.35,
                 new Vector(0, 3875.89),
-                /*new Vector(0,0),*/ Constants.velocityForOrbit(new Vector(0, 3875.89), bodies.getFirst()),
+                /*new Math.Vector(0,0),*/ Constants.velocityForOrbit(new Vector(0, 3875.89), bodies.getFirst()),
                 new Vector(0,0),
                 0.009150135422,
                 0,
@@ -53,11 +59,11 @@ public class Main extends JFrame {
 
 
         /*
-        bodies.add(new Planet(
+        bodies.add(new Bodies.Planet(
                 1,
-                new Vector(0, 0),
-                new Vector(0,0),
-                new Vector(0,0),
+                new Math.Vector(0, 0),
+                new Math.Vector(0,0),
+                new Math.Vector(0,0),
                 .1,
                 0,
                 250, //637.8,

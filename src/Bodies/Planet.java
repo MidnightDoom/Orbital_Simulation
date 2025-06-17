@@ -1,3 +1,6 @@
+package Bodies;
+
+import Math.*;
 import java.awt.*;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;

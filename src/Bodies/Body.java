@@ -1,3 +1,6 @@
+package Bodies;
+
+import Math.*;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -69,13 +72,13 @@ public abstract class Body {
 
     protected void updateVectors(Vector force, ArrayList<Body> bodies) {
         /*
-        Vector newPosition = position.add(velocity().scale(Constants.TIME_STEP / Constants.DISTANCE_CONSTANT)).add(acceleration().scale(Math.pow(Constants.TIME_STEP, 2) / (2 * Constants.DISTANCE_CONSTANT)));
+        Math.Vector newPosition = position.add(velocity().scale(Math.Constants.TIME_STEP / Math.Constants.DISTANCE_CONSTANT)).add(acceleration().scale(Math.pow(Math.Constants.TIME_STEP, 2) / (2 * Math.Constants.DISTANCE_CONSTANT)));
 
         System.out.println(newPosition);
 
-        Vector newAcceleration = force.scale(1 / massScaled());
+        Math.Vector newAcceleration = force.scale(1 / massScaled());
 
-        Vector newVelocity = velocity.add(acceleration().add(newAcceleration).scale(Constants.TIME_STEP / 2));
+        Math.Vector newVelocity = velocity.add(acceleration().add(newAcceleration).scale(Math.Constants.TIME_STEP / 2));
 
 
         acceleration = newAcceleration;
