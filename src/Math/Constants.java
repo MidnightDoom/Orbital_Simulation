@@ -53,4 +53,8 @@ public final class Constants {
         return TIME_STEP * ((double) 1000 / FRAME_STEP);
     }
 
+    public static double scaleBody(double size) {
+        return size + PLANET_SCALE / (1 + size);
+    }
+
 }

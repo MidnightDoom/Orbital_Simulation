@@ -19,8 +19,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (24.6 * Constants.getTimeScale()),
                 0,
-                679.4 * Constants.PLANET_SCALE,
-                675.2 * Constants.PLANET_SCALE
+                Constants.scaleBody(679.4),
+                Constants.scaleBody(675.2)
         ));
         bodies.add(new Planet(
                 "Phobos",
@@ -30,8 +30,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (24.6 * Constants.getTimeScale()),
                 0,
-                2.59 * Constants.PLANET_SCALE,
-                1.83 * Constants.PLANET_SCALE
+                Constants.scaleBody(2.59),
+                Constants.scaleBody(1.83)
         ));
         bodies.add(new Planet(
                 "Deimos",
@@ -41,8 +41,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (1.2644 * Constants.getTimeScale()),
                 0,
-                1.608 * Constants.PLANET_SCALE,
-                1.022 * Constants.PLANET_SCALE
+                 Constants.scaleBody(1.608),
+                Constants.scaleBody(1.022)
         ));
         return bodies;
     }
@@ -57,8 +57,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (24 * Constants.getTimeScale()),
                 0,
-                1275.6 * Constants.PLANET_SCALE,
-                1271.3 * Constants.PLANET_SCALE
+                Constants.scaleBody(1275.6),
+                Constants.scaleBody(1271.3)
         ));
         bodies.add(new Planet(
                 "Luna",
@@ -68,8 +68,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (29.5 * 24 * Constants.getTimeScale()),
                 0,
-                347.6 * Constants.PLANET_SCALE,
-                347.2 * Constants.PLANET_SCALE
+                Constants.scaleBody(347.6),
+                Constants.scaleBody(347.2)
         ));
         return bodies;
     }
@@ -84,8 +84,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 0,
                 0,
-                139140 * Constants.PLANET_SCALE,
-                139140 * Constants.PLANET_SCALE
+                Constants.scaleBody(139140),
+                Constants.scaleBody(139140)
         ));
         bodies.add(new Planet(
                 "Mercury",
@@ -95,8 +95,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (170 * 24 * Constants.getTimeScale()),
                 0,
-                487.9 * Constants.PLANET_SCALE,
-                487.9 * Constants.PLANET_SCALE
+                Constants.scaleBody(487.9),
+                Constants.scaleBody(487.9)
         ));
         bodies.add(new Planet(
                 "Venus",
@@ -106,8 +106,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (-243 * 24 * Constants.getTimeScale()),
                 0,
-                1210 * Constants.PLANET_SCALE,
-                1210 * Constants.PLANET_SCALE
+                Constants.scaleBody(1210),
+                Constants.scaleBody(1210)
         ));
         bodies.add(new Planet(
                 "Earth",
@@ -117,8 +117,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (24 * Constants.getTimeScale()),
                 0,
-                1275.6 * Constants.PLANET_SCALE,
-                1271.3 * Constants.PLANET_SCALE
+                Constants.scaleBody(1275.6),
+                Constants.scaleBody(1271.3)
         ));
         bodies.add(new Planet(
                 "Luna",
@@ -128,8 +128,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (29.5 * 24 * Constants.getTimeScale()),
                 0,
-                347.6 * Constants.PLANET_SCALE,
-                347.2 * Constants.PLANET_SCALE
+                Constants.scaleBody(347.6),
+                Constants.scaleBody(347.2)
         ));
         bodies.add(new Planet(
                 "Mars",
@@ -139,8 +139,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (24.6 * Constants.getTimeScale()),
                 0,
-                679.4 * Constants.PLANET_SCALE,
-                675.2 * Constants.PLANET_SCALE
+                Constants.scaleBody(679.4),
+                Constants.scaleBody(675.2)
         ));
         bodies.add(new Planet(
                 "Phobos",
@@ -150,8 +150,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (24.6 * Constants.getTimeScale()),
                 0,
-                2.59 * Constants.PLANET_SCALE,
-                1.83 * Constants.PLANET_SCALE
+                Constants.scaleBody(2.59),
+                Constants.scaleBody(1.83)
         ));
         bodies.add(new Planet(
                 "Deimos",
@@ -161,8 +161,8 @@ public final class SavedSims {
                 new Vector(0,0),
                 360 / (1.2644 * Constants.getTimeScale()),
                 0,
-                1.608 * Constants.PLANET_SCALE,
-                1.022 * Constants.PLANET_SCALE
+                Constants.scaleBody(1.608),
+                Constants.scaleBody(1.022)
         ));
         return bodies;
     }
