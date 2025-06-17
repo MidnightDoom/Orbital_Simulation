@@ -12,7 +12,9 @@ public final class Constants {
     public static final double DISTANCE_CONSTANT = 10000; // represents meters per pixel. Default value means Earth is 637.8 pixels wide
     public static final double MASS_CONSTANT = Math.pow(10,21); // represents kg per unit of mass
 
-    public static final double PLANET_SCALE = 1; // represents the scale of the planet's size, increased to allow for visual clarity
+    public static final boolean TRUE_SCALE = false;
+    
+    public static final double PLANET_SCALE = 100; // represents the scale of the planet's size, increased to allow for visual clarity
     public static final double STARTING_ZOOM = 0.1;
     public static final double STARTING_X_OFFSET = 0;
     public static final double STARTING_Y_OFFSET = -0;
@@ -54,6 +56,7 @@ public final class Constants {
     }
 
     public static double scaleBody(double size) {
+        if (TRUE_SCALE) return size;
         return size + PLANET_SCALE / (1 + size);
     }
 
