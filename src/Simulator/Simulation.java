@@ -3,13 +3,21 @@ package Simulator;
 import Bodies.Body;
 import Bodies.Ship;
 
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.awt.geom.AffineTransform;
 import java.util.ArrayList;
 
 // a system of bodies
 // has code for updating and rendering them all
-public class Simulation {
+public class Simulation extends KeyAdapter {
+
+    private boolean paused = false, spacePressed = false, timeWarp = false;
+    private int delay;
+    private boolean running;
+
 
     private final ArrayList<Body> bodies;
 
@@ -38,5 +46,48 @@ public class Simulation {
             body.paint(g);
             g.setTransform(original);
         }
+    }
+
+    public void startSim(int delay, JPanel p) {
+        this.delay = delay;
+        running = true;
+        try {
+            while (running) {
+                // prevent updating while paused
+                if (!paused) {
+                    updateAll();
+                    p.repaint();
+                }
+                Thread.sleep(this.delay / (timeWarp ? 10 : 1));
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        switch(e.getKeyCode()) {
+            case(KeyEvent.VK_SPACE) -> {
+                if (!spacePressed) {
+                    paused = !paused;
+                    System.out.println(paused ? "Paused" : "Unpaused");
+                    spacePressed = true;
+                }
+            }
+            case(KeyEvent.VK_SHIFT) -> {timeWarp = true;}
+            default -> {}
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        switch(e.getKeyCode()) {
+            case(KeyEvent.VK_SHIFT) -> {timeWarp = false;}
+            case(KeyEvent.VK_SPACE) -> {spacePressed = false;}
+            default -> {}
+        }
+
     }
 }

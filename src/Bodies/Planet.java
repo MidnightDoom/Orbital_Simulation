@@ -24,7 +24,7 @@ public class Planet extends RotationalBody {
     public void paint(Graphics2D g) {
 
         AffineTransform old = g.getTransform();
-        g.rotate(angle, position.x(), position.y());
+        g.rotate(Math.toRadians(angle), position.x(), position.y());
 
         g.setColor(Constants.PLANET_OUTLINE);
         g.drawOval(

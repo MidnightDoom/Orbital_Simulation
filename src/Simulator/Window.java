@@ -10,8 +10,6 @@ import java.awt.geom.AffineTransform;
 // use mouse to pan and zoom
 public class Window extends JPanel implements MouseListener, MouseWheelListener, MouseMotionListener {
 
-    boolean running = false;
-
     // variables for zooming and panning
     double zoom = Constants.STARTING_ZOOM;
     double xOffset = Constants.STARTING_X_OFFSET * Constants.STARTING_ZOOM;
@@ -26,25 +24,19 @@ public class Window extends JPanel implements MouseListener, MouseWheelListener,
         setBounds(0,0,WIDTH,HEIGHT);
         setBackground(Constants.BACKGROUND);
 
+        setFocusable(true);
+        requestFocusInWindow();
+
         addMouseWheelListener(this);
         addMouseMotionListener(this);
         addMouseListener(this);
+        addKeyListener(simulation);
 
         setVisible(true);
     }
 
     public void startSim(int delay) {
-        running = true;
-
-        try {
-            while (running) {
-                simulation.updateAll();
-                repaint();
-                Thread.sleep(delay);
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        simulation.startSim(delay, this);
     }
 
     @Override

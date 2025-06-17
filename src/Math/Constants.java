@@ -13,12 +13,12 @@ public final class Constants {
     public static final double MASS_CONSTANT = Math.pow(10,21); // represents kg per unit of mass
 
     public static final double PLANET_SCALE = 1; // represents the scale of the planet's size, increased to allow for visual clarity
-    public static final double STARTING_ZOOM = 0.025;
+    public static final double STARTING_ZOOM = 0.1;
     public static final double STARTING_X_OFFSET = 0;
-    public static final double STARTING_Y_OFFSET = -20000;
+    public static final double STARTING_Y_OFFSET = -0;
 
     public static final double TIME_STEP = 600; // represents seconds per timestep (per frame)
-    public static final int FRAME_STEP = 20; // represents milliseconds per frame
+    public static final int FRAME_STEP = 50; // represents milliseconds per frame
 
     // COLORS
     public static Color PLANET_FILL = Color.WHITE;
@@ -46,4 +46,11 @@ public final class Constants {
         Vector direction = pos.distanceVector(parent.position()).rotate(90).unitVector();
         return direction.scale(velocity);
     }
+
+    // returns simulated seconds per second
+    // Time step is simulated seconds per step, frame step is milliseconds between steps
+    public static double getTimeScale() {
+        return TIME_STEP * ((double) 1000 / FRAME_STEP);
+    }
+
 }
