@@ -9,7 +9,7 @@ public final class Constants {
     // CONSTANTS
 
     public static final double GRAVITATIONAL_CONSTANT  = 6.6743 * Math.pow(10,-11); // represents big G
-    public static final double DISTANCE_CONSTANT = 10000; // represents meters per pixel. Default value means Earth is 637.8 pixels wide
+    public static final double DISTANCE_CONSTANT = 10000; // represents meters per pixel. Default value means Earth is 1275.6 pixels wide
     public static final double MASS_CONSTANT = Math.pow(10,21); // represents kg per unit of mass
 
     public static final boolean TRUE_SCALE = false;
