@@ -7,7 +7,6 @@ import java.awt.*;
 public final class Constants {
 
     // CONSTANTS
-
     public static final double GRAVITATIONAL_CONSTANT  = 6.6743 * Math.pow(10,-11); // represents big G
     public static final double DISTANCE_CONSTANT = 10000; // represents meters per pixel. Default value means Earth is 1275.6 pixels wide
     public static final double MASS_CONSTANT = Math.pow(10,21); // represents kg per unit of mass
@@ -15,11 +14,11 @@ public final class Constants {
     public static final boolean TRUE_SCALE = false;
     
     public static final double PLANET_SCALE = 100; // represents the scale of the planet's size, increased to allow for visual clarity
-    public static final double STARTING_ZOOM = 0.1;
-    public static final double STARTING_X_OFFSET = 0;
-    public static final double STARTING_Y_OFFSET = -0;
+    public static double STARTING_ZOOM = 0.1;
+    public static double STARTING_X_OFFSET = 0;
+    public static double STARTING_Y_OFFSET = -0;
 
-    public static final double TIME_STEP = 600; // represents seconds per timestep (per frame)
+    public static double TIME_STEP = 600; // represents seconds per timestep (per frame)
     public static final int FRAME_STEP = 50; // represents milliseconds per frame
 
     // COLORS
@@ -58,6 +57,10 @@ public final class Constants {
     public static double scaleBody(double size) {
         if (TRUE_SCALE) return size;
         return size + PLANET_SCALE / (1 + size);
+    }
+
+    public static double getRotationSpeed(double hours) {
+        return 1 / (hours * 10);
     }
 
 }

@@ -10,6 +10,12 @@ public final class SavedSims {
     private static final ArrayList<Body> bodies = new ArrayList<>();
 
     public static ArrayList<Body> mars() {
+
+        Constants.TIME_STEP = 30;
+        Constants.STARTING_ZOOM = 0.2;
+        Constants.STARTING_X_OFFSET = 0;
+        Constants.STARTING_Y_OFFSET = 0;
+
         bodies.clear();
         bodies.add(new Planet(
                 "Mars",
@@ -17,7 +23,7 @@ public final class SavedSims {
                 new Vector(0, 0),
                 new Vector(0,0),
                 new Vector(0,0),
-                360 / (24.6 * Constants.getTimeScale()),
+                Constants.getRotationSpeed(24.6),
                 0,
                 Constants.scaleBody(679.4),
                 Constants.scaleBody(675.2)
@@ -25,10 +31,10 @@ public final class SavedSims {
         bodies.add(new Planet(
                 "Phobos",
                 0.0000106,
-                new Vector(637.6, 0),
-                Constants.velocityForOrbit(new Vector(637.6, 0), bodies.getFirst()),
+                new Vector(937.6, 0),
+                Constants.velocityForOrbit(new Vector(937.6, 0), bodies.getFirst()),
                 new Vector(0,0),
-                360 / (24.6 * Constants.getTimeScale()),
+                Constants.getRotationSpeed(-7.6),//360 / (7.6 * Constants.getTimeScale()),
                 0,
                 Constants.scaleBody(2.59),
                 Constants.scaleBody(1.83)
@@ -39,9 +45,9 @@ public final class SavedSims {
                 new Vector(2346.32, 0),
                 Constants.velocityForOrbit(new Vector(2346.32, 0), bodies.getFirst()),
                 new Vector(0,0),
-                360 / (1.2644 * Constants.getTimeScale()),
+                Constants.getRotationSpeed(1.2644),
                 0,
-                 Constants.scaleBody(1.608),
+                Constants.scaleBody(1.608),
                 Constants.scaleBody(1.022)
         ));
         return bodies;
