@@ -55,6 +55,14 @@ public record Vector(double x, double y) {
         return new Vector(x() / magnitude(), y() / magnitude());
     }
 
+    public double cross(Vector other) {
+        return x() * other.y() - y() * other.x();
+    }
+
+    public double dot(Vector other) {
+        return x() * other.x() + y() * other.y();
+    }
+        
     @Override
     public String toString() {
         return "<" + x() + "," + y() + ">";
