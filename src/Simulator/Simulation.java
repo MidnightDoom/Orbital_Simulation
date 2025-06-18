@@ -14,7 +14,7 @@ import java.util.ArrayList;
 // has code for updating and rendering them all
 public class Simulation extends KeyAdapter {
 
-    private boolean paused = false, spacePressed = false, timeWarp = false;
+    private boolean paused = false, spacePressed = false, tabPressed = false, timeWarp = false;
     private int delay;
     private boolean running;
 

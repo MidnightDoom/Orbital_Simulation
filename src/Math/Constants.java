@@ -21,6 +21,8 @@ public final class Constants {
     public static double TIME_STEP = 600; // represents seconds per timestep (per frame)
     public static final int FRAME_STEP = 50; // represents milliseconds per frame
 
+    public static final boolean DEBUG_PRINT = false;
+
     // COLORS
     public static Color PLANET_FILL = Color.WHITE;
     public static Color PLANET_OUTLINE = Color.WHITE;
@@ -61,6 +63,10 @@ public final class Constants {
 
     public static double getRotationSpeed(double hours) {
         return 1 / (hours * 10);
+    }
+
+    public static void debugPrint(String s) {
+        if (DEBUG_PRINT) System.out.println(s);
     }
 
 }

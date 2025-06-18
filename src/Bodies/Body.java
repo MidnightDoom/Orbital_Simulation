@@ -110,7 +110,7 @@ public abstract class Body {
     // takes in a list of bodies, calculates the net force between them and this body, then updates its position, velocity, and acceleration
     public void update(ArrayList<Body> bodies) {
 
-        System.out.println(name + ":" + position + ", " + velocity + ", " + acceleration);
+        Constants.debugPrint(name + ":" + position + ", " + velocity + ", " + acceleration);
 
         Vector force = netForce(bodies);
         updateVectors(force, bodies);
