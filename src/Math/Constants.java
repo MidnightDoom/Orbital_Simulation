@@ -56,6 +56,12 @@ public final class Constants {
         return TIME_STEP * ((double) 1000 / FRAME_STEP);
     }
 
+    public static void debugPrint(String s) {
+        if (DEBUG_PRINT) System.out.println(s);
+    }
+
+    // HELPS CONVERT VALUES FROM WIKIPEDIA TO USABLE VALUES
+
     public static double scaleBody(double size) {
         if (TRUE_SCALE) return size;
         return size + PLANET_SCALE / (1 + size);
@@ -65,8 +71,19 @@ public final class Constants {
         return 1 / (hours * 10);
     }
 
-    public static void debugPrint(String s) {
-        if (DEBUG_PRINT) System.out.println(s);
+    public static Vector getPositionVector(Vector base) {
+        return base.scale(1 / DISTANCE_CONSTANT);
     }
 
+    public static Vector getPositionVectorFromKM(Vector base) {
+        return base.scale(1000 / DISTANCE_CONSTANT);
+    }
+
+    public static double getRadius(double base) {
+        return scaleBody(base / DISTANCE_CONSTANT);
+    }
+
+    public static double getMass(double base) {
+        return base / MASS_CONSTANT;
+    }
 }
