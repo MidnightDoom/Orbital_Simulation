@@ -54,6 +54,7 @@ public final class SavedSims {
     }
 
     public static ArrayList<Body> earth() {
+
         bodies.clear();
         bodies.add(new Planet(
                 "Earth",
@@ -81,6 +82,13 @@ public final class SavedSims {
     }
 
     public static ArrayList<Body> solarSystem() {
+
+        Constants.TIME_STEP = 36000;
+        Constants.STARTING_ZOOM = 0.0001;
+        Constants.STARTING_X_OFFSET = 0;
+        Constants.STARTING_Y_OFFSET = 0;
+        Constants.PLANET_SCALE = 1000;
+
         bodies.clear();
         bodies.add(new Planet(
                 "Sol",
@@ -130,7 +138,7 @@ public final class SavedSims {
                 "Luna",
                 73.4,
                 new Vector(38440, 14900000),
-                Constants.velocityForOrbit(new Vector(38440, 14900000), bodies.get(3)),
+                Constants.velocityForOrbit(new Vector(38440, 14900000), bodies.get(3)).add(bodies.get(3).velocity()),
                 new Vector(0,0),
                 360 / (29.5 * 24 * Constants.getTimeScale()),
                 0,
@@ -152,7 +160,7 @@ public final class SavedSims {
                 "Phobos",
                 0.0000106,
                 new Vector(637.6, 22800000),
-                Constants.velocityForOrbit(new Vector(637.6, 22800000), bodies.get(5)),
+                Constants.velocityForOrbit(new Vector(637.6, 22800000), bodies.get(5)).add(bodies.get(5).velocity()),
                 new Vector(0,0),
                 360 / (24.6 * Constants.getTimeScale()),
                 0,
@@ -163,7 +171,7 @@ public final class SavedSims {
                 "Deimos",
                 0.00000151,
                 new Vector(2346.32, 22800000),
-                Constants.velocityForOrbit(new Vector(2346.32, 22800000), bodies.get(5)),
+                Constants.velocityForOrbit(new Vector(2346.32, 22800000), bodies.get(5)).add(bodies.get(5).velocity()),
                 new Vector(0,0),
                 360 / (1.2644 * Constants.getTimeScale()),
                 0,

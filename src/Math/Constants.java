@@ -13,7 +13,7 @@ public final class Constants {
 
     public static final boolean TRUE_SCALE = false;
     
-    public static final double PLANET_SCALE = 100; // represents the scale of the planet's size, increased to allow for visual clarity
+    public static double PLANET_SCALE = 100; // represents the scale of the planet's size, increased to allow for visual clarity. Smaller planets scaled more, 10-1000 is a good range
     public static double STARTING_ZOOM = 0.1;
     public static double STARTING_X_OFFSET = 0;
     public static double STARTING_Y_OFFSET = -0;
