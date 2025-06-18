@@ -15,6 +15,8 @@ public final class SavedSims {
         Constants.STARTING_ZOOM = 0.2;
         Constants.STARTING_X_OFFSET = 0;
         Constants.STARTING_Y_OFFSET = 0;
+        Constants.PLANET_SCALE = .5;
+        Constants.SCALE_FACTOR = 100;
 
         bodies.clear();
         bodies.add(new Planet(

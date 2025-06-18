@@ -11,9 +11,11 @@ public final class Constants {
     public static final double DISTANCE_CONSTANT = 10000; // represents meters per pixel. Default value means Earth is 1275.6 pixels wide
     public static final double MASS_CONSTANT = Math.pow(10,21); // represents kg per unit of mass
 
-    public static final boolean TRUE_SCALE = false;
-    
-    public static double PLANET_SCALE = 100; // represents the scale of the planet's size, increased to allow for visual clarity. Smaller planets scaled more, 10-1000 is a good range
+    public static final boolean TRUE_SCALE = false; // Disables planet scaling for a true scale experience
+
+    // PLANET_SCALE and SCALE_FACTOR help scale the planets for more visual clarity
+    public static double PLANET_SCALE = .5; // controls how aggressively smaller bodies are scaled
+    public static double SCALE_FACTOR = 100; // controls overall scale amount
     public static double STARTING_ZOOM = 0.1;
     public static double STARTING_X_OFFSET = 0;
     public static double STARTING_Y_OFFSET = -0;
@@ -64,7 +66,7 @@ public final class Constants {
 
     public static double scaleBody(double size) {
         if (TRUE_SCALE) return size;
-        return size + PLANET_SCALE / (1 + size);
+        return size + (SCALE_FACTOR / Math.pow(size, PLANET_SCALE));
     }
 
     public static double getRotationSpeed(double hours) {
