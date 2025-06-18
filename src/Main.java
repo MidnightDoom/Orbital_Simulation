@@ -31,7 +31,7 @@ public class Main extends JFrame {
 
     public void createFrame(Object semaphore) {
 
-        Simulation sim = new Simulation(SavedSims.solarSystem());
+        Simulation sim = new Simulation(SavedSims.mars());
         window = new Window(sim);
 
         setTitle("Space Sim");

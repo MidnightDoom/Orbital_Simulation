@@ -20,33 +20,20 @@ public abstract class Body {
 
     // note: xxxScaled() outputs the scaled value, as most values are scaled to make fitting them onscreen easier
 
-    public double massScaled() {
-        return mass * Constants.MASS_CONSTANT;
+    public double mass() {
+        return mass;
     }
 
     public Vector position() {
         return position;
     }
 
-    public Vector positionScaled() {
-        return position.scale(Constants.DISTANCE_CONSTANT);
-    }
-
     public Vector velocity() {
         return velocity;
     }
 
-    public Vector accelerationScaled() {
-        return acceleration.scale(Constants.DISTANCE_CONSTANT / Math.pow(Constants.TIME_STEP, 2));
-    }
-
     public Vector acceleration() {
         return acceleration;
-    }
-
-    public Vector velocityScaled() {
-        // scaled velocity removes TIME_STEP and scales the vector
-        return velocity.scale(Constants.DISTANCE_CONSTANT / Constants.TIME_STEP);
     }
 
     // TODO: change to non-abstract method, draw previous and predicted path
@@ -63,7 +50,7 @@ public abstract class Body {
             if (body.equals(this)) continue;
 
             // force component
-            double forceComp = massScaled() * body.massScaled() * Constants.GRAVITATIONAL_CONSTANT / positionScaled().distanceSquared(body.positionScaled());
+            double forceComp = mass() * body.mass() * Constants.GRAVITATIONAL_CONSTANT / position.distanceSquared(body.position);
             Vector direction = position().distanceVector(body.position()).unitVector();
             force = force.add(direction.scale(forceComp));
         }
@@ -95,11 +82,11 @@ public abstract class Body {
         velocity = velocity.add(oldAcceleration.scale(Constants.TIME_STEP / 2));
 
         // Update position
-        position = position.add(velocity.scale(Constants.TIME_STEP / Constants.DISTANCE_CONSTANT));
+        position = position.add(velocity.scale(Constants.TIME_STEP));
 
         // Recompute acceleration using new position (requires calling netForce again)
         Vector newForce = netForce(bodies); // You'll need to pass the body list again
-        Vector newAcceleration = newForce.scale(1 / massScaled());
+        Vector newAcceleration = newForce.scale(1 / mass());
 
         // Update velocity (second half step)
         velocity = velocity.add(newAcceleration.scale(Constants.TIME_STEP / 2));

@@ -8,12 +8,9 @@ public final class Constants {
 
     // CONSTANTS
     public static final double GRAVITATIONAL_CONSTANT  = 6.6743 * Math.pow(10,-11); // represents big G
-    public static final double DISTANCE_CONSTANT = 10000; // represents meters per pixel. Default value means Earth is 1275.6 pixels wide
-    public static final double MASS_CONSTANT = Math.pow(10,21); // represents kg per unit of mass
 
-    public static final boolean TRUE_SCALE = false;
-    
-    public static double PLANET_SCALE = 100; // represents the scale of the planet's size, increased to allow for visual clarity. Smaller planets scaled more, 10-1000 is a good range
+    public static boolean TRUE_SCALE = false;
+    public static double PLANET_SCALE = 1000 ; // represents the scale of the planet's size, increased to allow for visual clarity. Smaller planets scaled more, 10-1000 is a good range
     public static double STARTING_ZOOM = 0.1;
     public static double STARTING_X_OFFSET = 0;
     public static double STARTING_Y_OFFSET = -0;
@@ -44,7 +41,7 @@ public final class Constants {
     // pos is the orbital position of the object, the parent is what it will orbit
     public static Vector velocityForOrbit(Vector pos, Body parent) {
         // calculates velocity with v = sqrt(MG/R)
-        double velocity = Math.sqrt(GRAVITATIONAL_CONSTANT * parent.massScaled() / pos.scale(DISTANCE_CONSTANT).distance(parent.positionScaled()));
+        double velocity = Math.sqrt(GRAVITATIONAL_CONSTANT * parent.mass() / pos.distance(parent.position()));
 
         Vector direction = pos.distanceVector(parent.position()).rotate(90).unitVector();
         return direction.scale(velocity);
