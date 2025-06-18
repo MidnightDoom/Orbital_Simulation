@@ -17,6 +17,7 @@ public final class SavedSims {
         Constants.STARTING_Y_OFFSET = 0;
         Constants.PLANET_SCALE = .5;
         Constants.SCALE_FACTOR = 100;
+        Constants.TRUE_SCALE = false;
 
         bodies.clear();
         bodies.add(new Planet(
@@ -57,6 +58,14 @@ public final class SavedSims {
 
     public static ArrayList<Body> earth() {
 
+        Constants.TIME_STEP = 1080;
+        Constants.STARTING_ZOOM = 0.01;
+        Constants.STARTING_X_OFFSET = 0;
+        Constants.STARTING_Y_OFFSET = 0;
+        Constants.PLANET_SCALE = 1;
+        Constants.SCALE_FACTOR = 1;
+        Constants.TRUE_SCALE = true;
+
         bodies.clear();
         bodies.add(new Planet(
                 "Earth",
@@ -89,7 +98,10 @@ public final class SavedSims {
         Constants.STARTING_ZOOM = 0.0001;
         Constants.STARTING_X_OFFSET = 0;
         Constants.STARTING_Y_OFFSET = 0;
-        Constants.PLANET_SCALE = 1000;
+        Constants.PLANET_SCALE = .0005;
+        Constants.SCALE_FACTOR = 10;
+        Constants.TRUE_SCALE = false;
+
 
         bodies.clear();
         bodies.add(new Planet(

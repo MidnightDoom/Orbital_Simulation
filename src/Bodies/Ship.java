@@ -7,7 +7,7 @@ import java.util.ArrayList;
 // a body that represents a spaceship, able to move itself
 public class Ship extends RotationalBody {
 
-    double MAX_THRUST, thrust;
+    double MAX_THRUST = 100, thrust, RAMP_UP = 1, RAMP_DOWN = 1, ROTATIONAL_ACCELERATION = .1;
     // rating of the ship, determines its icon
     // ie: frigate, destroyer, cruiser, capital, super capital
     int type;

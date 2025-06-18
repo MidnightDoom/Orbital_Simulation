@@ -10,6 +10,9 @@ import java.awt.geom.AffineTransform;
 // use mouse to pan and zoom
 public class Window extends JPanel implements MouseListener, MouseWheelListener, MouseMotionListener, KeyListener {
 
+    // TODO: allow focusing on bodies (x and y offset updated to keep it centered)
+    // TODO: fix zooming to keep mouse centered
+
     // variables for zooming and panning
     double zoom = Constants.STARTING_ZOOM;
     double xOffset = Constants.STARTING_X_OFFSET * Constants.STARTING_ZOOM;

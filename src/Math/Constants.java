@@ -11,8 +11,7 @@ public final class Constants {
     public static final double DISTANCE_CONSTANT = 10000; // represents meters per pixel. Default value means Earth is 1275.6 pixels wide
     public static final double MASS_CONSTANT = Math.pow(10,21); // represents kg per unit of mass
 
-    public static final boolean TRUE_SCALE = false; // Disables planet scaling for a true scale experience
-
+    public static boolean TRUE_SCALE = false; // Disables planet scaling for a true scale experience
     // PLANET_SCALE and SCALE_FACTOR help scale the planets for more visual clarity
     public static double PLANET_SCALE = .5; // controls how aggressively smaller bodies are scaled
     public static double SCALE_FACTOR = 100; // controls overall scale amount
