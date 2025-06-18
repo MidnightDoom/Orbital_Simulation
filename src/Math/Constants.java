@@ -10,7 +10,8 @@ public final class Constants {
     public static final double GRAVITATIONAL_CONSTANT  = 6.6743 * Math.pow(10,-11); // represents big G
 
     public static boolean TRUE_SCALE = false;
-    public static double PLANET_SCALE = 1000 ; // represents the scale of the planet's size, increased to allow for visual clarity. Smaller planets scaled more, 10-1000 is a good range
+    public static double SCALE_FACTOR = 100;
+    public static double PLANET_SCALE = .001; // represents the scale of the planet's size, increased to allow for visual clarity. Smaller planets scaled more, 10-1000 is a good range
     public static double STARTING_ZOOM = 0.1;
     public static double STARTING_X_OFFSET = 0;
     public static double STARTING_Y_OFFSET = -0;
@@ -55,7 +56,9 @@ public final class Constants {
 
     public static double scaleBody(double size) {
         if (TRUE_SCALE) return size;
-        return size + PLANET_SCALE / (1 + size);
+        size /= 10000;
+        size = size + SCALE_FACTOR / Math.pow(size, PLANET_SCALE);
+        return size * 10000;
     }
 
     public static double getRotationSpeed(double hours) {
